@@ -1,21 +1,21 @@
 /* exported Script */
 /* globals console, _, s, HTTP */
+// NestorMenu
 class NestorMenu {
   constructor(menu){
     this.menu = menu;
   }
-  
+  /**
+  * Get the menu of the day.
+  **/
   todayMenu(){
     let lt = new Date();
     return this.menu.menus.filter((menu) => new Date(menu.date).toLocaleDateString() === lt.toLocaleDateString())[0];
   }
-  
 }
-
+// Format the menu according to the rocketchat needs.
 class FormatNestorMenu{
-  
   constructor(){}
-  
   /**
    * Format the menu.
    * @param: The menu
